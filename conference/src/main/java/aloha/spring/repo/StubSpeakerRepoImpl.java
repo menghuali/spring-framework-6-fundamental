@@ -3,8 +3,11 @@ package aloha.spring.repo;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import aloha.spring.model.Speaker;
 
+@Repository("speakerRepo")
 public class StubSpeakerRepoImpl implements SpeakerRepo {
 
     @Override

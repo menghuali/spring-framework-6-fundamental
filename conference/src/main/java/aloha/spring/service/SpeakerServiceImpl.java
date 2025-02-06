@@ -2,14 +2,33 @@ package aloha.spring.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import aloha.spring.model.Speaker;
 import aloha.spring.repo.SpeakerRepo;
 
+@Service("speakerService")
+@Scope(BeanDefinition.SCOPE_SINGLETON)
 public class SpeakerServiceImpl implements SpeakerService {
 
     private SpeakerRepo repo;
 
+    // public SpeakerServiceImpl() {
+    // System.out.println("SpeakerServiceImpl no args constructor");
+    // }
+
+    /**
+     * If the constructor with dependency arguments is the only constructor, you
+     * don't even need @Autowired. Spring will automatically use the constructor to
+     * create the component and inject denepdenies.
+     * 
+     * @param repo Service repository, the dependecy to be injecteted.
+     */
+    // @Autowired
     public SpeakerServiceImpl(SpeakerRepo repo) {
+        System.out.println("SpeakerServiceImpl repo constructor");
         this.repo = repo;
     }
 
@@ -18,7 +37,9 @@ public class SpeakerServiceImpl implements SpeakerService {
         return repo.findAll();
     }
 
+    // @Autowired
     public void setRepo(SpeakerRepo repo) {
+        System.out.println("SpeakerServiceImpl repo setter");
         this.repo = repo;
     }
 

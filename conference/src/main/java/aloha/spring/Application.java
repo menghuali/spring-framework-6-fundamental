@@ -15,5 +15,9 @@ public class Application {
             System.out.println(
                     String.format("First name: %s, Last name: %s", speaker.getFirstName(), speaker.getLastName()));
         });
+
+        // Test singleton
+        SpeakerService service2 = appCtx.getBean("speakerService", SpeakerService.class);
+        System.out.println("service == service2: " + (service == service2));
     }
 }
