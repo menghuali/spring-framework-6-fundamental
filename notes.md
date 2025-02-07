@@ -17,3 +17,28 @@ Autowired
   * @Component
   * @Repository
   * @Service
+
+# Adcanced Bean Configuration
+Bean lifecycle
+1. Instantiation
+2. Populate properties
+3. BeanNameAware
+4. BeanFactoryAware
+5. Pre initialization - BeanPostProcessors
+6. InitializeBean
+7. initMethod
+8. Post initialization - BeanPostProcessors
+
+## BeanPostProcessor
+@PostConstruct
+
+## FactoryBean
+
+
+SpEL
+
+Proxies
+
+Profiles<br>
+* Adapt environments
+* Runtime configuration

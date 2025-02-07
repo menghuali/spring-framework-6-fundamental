@@ -13,7 +13,8 @@ public class Application {
         SpeakerService service = appCtx.getBean("speakerService", SpeakerService.class);
         service.findAll().stream().forEach(speaker -> {
             System.out.println(
-                    String.format("First name: %s, Last name: %s", speaker.getFirstName(), speaker.getLastName()));
+                    String.format("First name: %s, Last name: %s, Seed: %s", speaker.getFirstName(),
+                            speaker.getLastName(), speaker.getSeedNum()));
         });
 
         // Test singleton
